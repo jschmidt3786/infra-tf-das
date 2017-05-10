@@ -1,0 +1,8 @@
+*.tfvars
+*.tfplan
+.init.txt
+.terraform
+.terraform/*
+*.png
+modules/*
+.*.swp

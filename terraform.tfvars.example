@@ -1,0 +1,46 @@
+###   main.tf   ###########################################################
+aws_region = "us-east-1"
+project = "das"
+environment = "test"
+
+###   vpc.tf   ############################################################
+allowed_ips = ["0.0.0.0/0"]
+# we have a /22 for all of DAS - a /24 should be sufficient for the testing env
+cidr_block = "10.64.4.0/24"
+hostnames = "true"
+
+###   subnets.tf   ########################################################
+# 10.64.4.1 - 10.64.4.30
+subnet_api1_ip = "10.64.4.0/27"
+subnet_api1_az = "us-east-1a"
+
+# 10.64.4.33 - 10.64.4.62
+subnet_api2_ip = "10.64.4.32/27"
+subnet_api2_az = "us-east-1b"
+
+# 10.64.4.65 - 10.64.4.94
+subnet_api3_ip = "10.64.4.64/27"
+subnet_api3_az = "us-east-1d"
+
+
+# 10.64.4.129 - 10.64.4.158
+subnet_rmq1_ip = "10.64.4.128/27"
+subnet_rmq1_az = "us-east-1a"
+
+# 10.64.4.161 - 10.64.4.190
+subnet_rmq2_ip = "10.64.4.160/27"
+subnet_rmq2_az = "us-east-1b"
+
+# 10.64.4.193 - 10.64.4.222
+subnet_rmq3_ip = "10.64.4.192/27"
+subnet_rmq3_az = "us-east-1d"
+
+###   routetables.tf   ####################################################
+subnet_api_ip = "10.64.4.0/25"
+subnet_rmq_ip = "10.64.4.128/25"
+
+###   routes.tf   #########################################################
+
+
+###   securitygroups.tf   #################################################
+

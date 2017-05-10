@@ -1,0 +1,23 @@
+module "redis-loadbalancer" {
+  #source                      = "github.com/monotype/infra-terraform//modules//loadbalancer"
+  source                      = "/modules/loadbalancers"
+  name                        = "${module.loadbalancer.elb_name}"
+  name_prefix                 = "${module.loadbalancer.elb_name_prefix}"
+  access_logs {
+    bucket        =
+    bucket_prefix =
+    bucket        =
+  }
+  availability_zones          = ["${}"]
+  security_groups             = ["${}"]
+  subnets                     = ["${}"]
+  instances                   =
+  internal                    =
+  listener                    =
+  health_check                =
+  cross_zone_load_balancing   =
+  idle_timeout                =
+  connection_draining         =
+  connection_draining_timeout =
+  tags                        =
+}
