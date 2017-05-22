@@ -124,3 +124,12 @@ variable allow-rabbitmq-from-mt2-cidr {
   default     = ["0.0.0.0/0"]
 }
 
+variable api-loadbalancer-subnets {
+  type = "list"
+  description = "API loadbalancer subnets"
+}
+
+variable api-loadbalancer-internal {
+  description = "If true, ELB will be an internal ELB."
+  default     = "true"
+}
